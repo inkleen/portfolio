@@ -1,119 +1,73 @@
-### canvas-poster-sprite
-A poster plugin that can draw texts, paths and pictures to canvas, and export picture data.
+# 🎨 [你的名字] - UI/UX设计作品集
 
-#### Introduction | [简体中文](https://github.com/466102061/canvas-poster-sprite/blob/main/doc/README-ZH.md)
-+ Multiterminal support：[web-h5 | uni-app | wx-miniprogram | my-miniprogram | tt-miniprogram | swan-miniprogram | qq-miniprogram](https://github.com/466102061/canvas-poster-sprite/tree/main/dist)
-+ Canvas support：draw texts, paths and pictures to canvas
-+ Canvas z-index：pictures(preload=true) < paths < pictures < texts
+[![Dribbble](https://img.shields.io/badge/Dribbble-EA4C89?logo=dribbble)](https://dribbble.com/yourprofile)
+[![Behance](https://img.shields.io/badge/Behance-1769FF?logo=behance)](https://behance.net/yourprofile)
+[![Figma社区](https://img.shields.io/badge/Figma_Community-0AC97F?logo=figma)](https://figma.com/@yourusername)
 
-#### Notes | [Update](https://github.com/466102061/canvas-poster-sprite/blob/main/doc/update.md)
-+ Text does not support art form, art form can be replaced by pictures.
-+ Pictures resources support | HTTPS (HTTP attention to the problem of cross domain), only the web side support local resources (local service, please use the require import).
-+ Pictures(preload=true)，can be first drawed to canvas.
-+ The width and height of the canvas should be the same as the width and height of the poster image, so that the final composite image will not have excess white space.
-+ The quality of exported images can be controlled through fields FileType and Quality. Generally, the quality of JPEG images is relatively low.
-+ Inside uni, we call uni's API, it should be support app-vue, web and miniprogram. 
+> 「设计是无声的对话」—— 这是我的数字产品设计实践库
 
-#### Useage
-+ install：npm i canvas-poster-sprite  or yarn add canvas-poster-sprite
-+ web：import CanvasPosterSprite from 'canvas-poster-sprite'
-+ uni：import CanvasPosterSprite from 'canvas-poster-sprite/dist/uni-canvas-poster-sprite.js'
-+ wx：import CanvasPosterSprite from 'canvas-poster-sprite/dist/wx-canvas-poster-sprite.js'
-+ my：import CanvasPosterSprite from 'canvas-poster-sprite/dist/my-canvas-poster-sprite.js'
-+ tt：import CanvasPosterSprite from 'canvas-poster-sprite/dist/tt-canvas-poster-sprite.js'
-+ swan：import CanvasPosterSprite from 'canvas-poster-sprite/dist/swan-canvas-poster-sprite.js'
-+ qq：import CanvasPosterSprite from 'canvas-poster-sprite/dist/qq-canvas-poster-sprite.js'
-+ instance：new CanvasPosterSprite(setting)
-```
-new CanvasPosterSprite({
-  /* uni|wx|my|tt|swan|qq */
-  self: this, 
-  canvasId: 'canvas-id',
+---
 
-  /* web|uni|wx|my|tt|swan|qq */
-  width: 900,
-  height: 1600,
-  bgColor: '#dddddd',
-  paths : {
-    circle : [
-      {x: 214, y: 1123, w: 56, h: 56, r: 28, type: "fill", color: "#ffffff"}
-    ],
-    rect : [
-      {x: 324, y: 1209, w: 252, h: 252, type: "fill", color: "#e6e6e6"},
-      {x: 325, y: 1210, w: 250, h: 250, type: "fill", color: "#ffffff"},
-      {x: 206, y: 1117, w: 488, h: 68, r: 34, type: "fill", color: "rgba(0, 0, 0, .15)"},
-      {x: 376.5, y: 1520.5, w: 152, h: 44, r: 22, lineWidth: 4, color: "#000000"}
-    ],
-    triangle : [
-      {points : [{x: 450, y: 1198}, {x: 462, y: 1185}, {x: 439, y: 1185}], type: "fill", color: "rgba(0, 0, 0, .15)"}
-    ],
-    line : [
-      {x1: 360, y1: 1490.5, x2: 400, y2: 1490.5, lineWidth: 2, color: "#000000"},
-      {x1: 505, y1: 1490.5, x2: 545, y2: 1490.5, lineWidth: 2, color: "#000000"}
-    ]
-  },
-  /*pics : [
-    {x: 0, y: 0, w: 900, h: 1600, preload: true, src: "./img/bg-zm.jpg"},
-    {x: 328, y: 1213, w: 244, h: 244, src: "./img/qrcode-zm.png"},
-    {x: 215, y: 1124, w: 54, h: 54, r: 27, src: "./img/icon.jpeg"}
-  ],*/
-  texts: [
-    {x: 280, y: 1152, font: "26px 微软雅黑", color: "#FFE506", text: "小小咖侠侣店"},
-    {x: 436, y: 1152, font: "26px 微软雅黑", color: "#ffffff", text: "邀请你注册侠侣联盟"},
-    {x: 328, y: 1493, w: 250, font: "24px 微软雅黑", align: "center", color: "#000000", text: "邀 请 码"},
-    {x: 328, y: 1543, w: 250, font: "28px Arail", align: "center", color: "#000000", text: "3ZGVTV"}
-  ]
-}).then((err, res)=>{
-   if(err){
-     console.log("canvas-fail：", err);
-     return;
-   }
-   let { tempFilePath, canvas } = res;
-   console.log("canvas-success：", res);
-})
-```
-#### examples
-+ [screenshot](https://github.com/466102061/canvas-poster-sprite/tree/main/screenshot)
-+ web：[examples/index.html](https://github.com/466102061/canvas-poster-sprite/tree/main/examples)
-+ uni：[examples/components/uni-canvas](https://github.com/466102061/canvas-poster-sprite/tree/main/examples/components)
-+ wx：[examples/components/wx-canvas](https://github.com/466102061/canvas-poster-sprite/tree/main/examples/components)
-+ my：[examples/components/my-canvas](https://github.com/466102061/canvas-poster-sprite/tree/main/examples/components)
-+ tt：[examples/components/tt-canvas](https://github.com/466102061/canvas-poster-sprite/tree/main/examples/components)
-+ swan：[examples/components/swan-canvas](https://github.com/466102061/canvas-poster-sprite/tree/main/examples/components)
-+ qq：[examples/components/qq-canvas](https://github.com/466102061/canvas-poster-sprite/tree/main/examples/components)
-#### Configuration
-+ let spriter = new CanvasPosterSprite(options)
-+ options
-+ web | uni | wx | my | tt | swan | qq
+## 🖌️ 设计工具箱
+**核心技能**  
+![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white)
+![Adobe_XD](https://img.shields.io/badge/Adobe_XD-FF61F6?logo=adobe-xd&logoColor=white)
+![User_Research](https://img.shields.io/badge/用户研究-4285F4?logo=google-scholar)
+![Interaction_Design](https://img.shields.io/badge/交互设计-FF6B6B?logo=storybook)
 
-| param | type | require | default | desc |
-| :----: | :----: | :----: | :----: | :---- |
-| width | Number | -- | 640 | canvas width. |
-| height | Number | -- | 640 | canvas height. |
-| bgColor | String | -- | #fff | canvas background color. |
-| fileType | String | -- | jpeg | type of pictures. eg.jpeg、png、gif |
-| quality | Number | -- | 1 | quality of pictures. |
-| pics | Array | -- | -- | pictures. [More](https://github.com/466102061/canvas-poster-sprite/blob/main/doc/draw-pic.md) |
-| paths | Object | -- | -- | paths. [More](https://github.com/466102061/canvas-poster-sprite/blob/main/doc/draw-path.md) |
-| texts | Array | -- | -- | texts. [More](https://github.com/466102061/canvas-poster-sprite/blob/main/doc/draw-text.md) |
+**辅助工具**  
+Procreate | Blender | After Effects | Maze用户测试
 
-+  uni | wx | my | tt | swan | qq
+---
 
-| param | type | require | default | desc |
-| :----: | :----: | :----: | :----: | :---- |
-| self | Object | yes | -- | content - this |
-| canvasId | String | yes | -- | canvas-id |
+## 🌟 精选案例
 
-+ uni
+### 1. 智能家居控制App设计 [![Figma原型](https://img.shields.io/badge/交互原型-体验设计-00CC00)](https://figma.com/proto/yourlink)
+**项目背景**：为IoT设备打造极简控制体验  
+**设计亮点**：
+- 建立完整设计系统（含120+组件库）
+- 3D设备可视化交互方案
+- 无障碍颜色对比度方案（WCAG 2.1 AA标准）
+- 用户旅程地图与情绪板展示
 
-| param | type | require | default | desc |
-| :----: | :----: | :----: | :----: | :---- |
-| appPlus | Boolean | -- | false | app，whether transform pictures to base64 first，and draw to canvas，[fix：Android10 uni.canvasToTempFilePath Error.](https://ask.dcloud.net.cn/question/103303) |
-| pixelRatio | Number | -- | 2 | app pixelRatio. |
+📁 [设计文件](https://figma.com/file/yourlink) | 📝 [设计规范](https://yourdocs.com)
 
-+ spriter
+![App Demo](smart-home-app-flow.gif)
 
-| method | desc |
-| :----:| :---- |
-| spriter.then(callback) | callback(err, res) |
+---
 
+### 2. 电商平台设计系统
+**服务对象**：B2C跨境电商平台重构  
+**关键产出**：
+- 原子化设计系统架构
+- 暗黑模式动态主题方案
+- 微交互动效库（含Lottie动画）
+- 设计走查Checklist工具
+
+🎬 [动效演示](https://youtube.com/yourdemo) | 📊 [可用性测试报告](https://yourreport.com)
+
+![Design System](design-system-screens.png)
+
+---
+
+### 3. 医疗健康Web端仪表盘
+**设计挑战**：复杂数据可视化与信息降噪  
+**解决方案**：
+- 用户角色建模（3类医护角色）
+- 数据图表组件库开发
+- 多层级信息架构设计
+- 情景化空状态设计
+
+📈 [数据可视化方案](https://yourdocs.com) | 🏥 [用户访谈记录](https://yourdocs.com)
+
+---
+
+## 🎯 设计流程
+```mermaid
+graph LR
+    A[需求分析] --> B(竞品分析)
+    B --> C[用户旅程地图]
+    C --> D{线框图迭代}
+    D --> E[高保真原型]
+    E --> F[可用性测试]
+    F --> G[设计交付]
