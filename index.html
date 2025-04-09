@@ -2,25 +2,25 @@
 <html>
 <head>
   <script>
-    // Ë«ÖØ¼ì²â£ºÆÁÄ»³ß´ç + UserAgent
+    // åŒé‡æ£€æµ‹ï¼šå±å¹•å°ºå¯¸ + UserAgent
     function isPC() {
-      // ÆÁÄ»¿í¶ÈãĞÖµ£¨¿É×Ô¶¨Òåµ÷Õû£©
-      const minWidth = 1280;  // ³£¼û±Ê¼Ç±¾×îĞ¡¿í¶È
+      // å±å¹•å®½åº¦é˜ˆå€¼ï¼ˆå¯è‡ªå®šä¹‰è°ƒæ•´ï¼‰
+      const minWidth = 1280;  // å¸¸è§ç¬”è®°æœ¬æœ€å°å®½åº¦
       const minHeight = 600;
       
-      // ÆÁÄ»³ß´ç¼ì²â
+      // å±å¹•å°ºå¯¸æ£€æµ‹
       const isLargeScreen = window.screen.width >= minWidth && window.screen.height >= minHeight;
       
-      // UserAgent¸¨Öú¼ì²â
+      // UserAgentè¾…åŠ©æ£€æµ‹
       const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       
       return isLargeScreen && !isMobileUA;
     }
 
     if (isPC()) {
-      window.location.href = 'https://pdfjm.cn/api/pdf/pdf?id=MTMzNjYy'; // Ìæ»»ÎªÄ¿±êÍøÖ·
+      window.location.href = 'https://pdfjm.cn/api/pdf/pdf?id=MTU4MjU3'; // æ›¿æ¢ä¸ºç›®æ ‡ç½‘å€
     } else {
-      document.write('<h3>ÇëÊ¹ÓÃµçÄÔä¯ÀÀÆ÷´ò¿ª´ËÁ´½Ó</h3>');
+      document.write('<h3>è¯·ä½¿ç”¨ç”µè„‘æµè§ˆå™¨æ‰“å¼€æ­¤é“¾æ¥</h3>');
     }
   </script>
 </head>
