@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { draw } from 'https://hub.gitmirror.com/https://raw.githubusercontent.com/inkleen/portfolio/refs/heads/main/renderUtils.js';
+import { draw } from './renderUtils';
 
 /**
  * 生成3d饼图
